@@ -1,0 +1,52 @@
+
+<div style="background:#E1DD8F !important" class="jumbotron" id="topper">
+  <h1 class="display-4">Bologne's Burgers</h1>
+  <p class="lead">Make a burger, then chomp it down.</p>
+</div>
+
+<div class="row">
+  
+  <div class="col-md-4 text-center">
+    <div class="row">
+      <div class="col-md text-center">
+         <img class="img-responsive burg" src="../assets/images/burger1.png" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md text-center">
+        <h2 class="text-center">Add a Burger</h2>
+        <form class="text-center" action="/" method="POST">
+          <div class="form-group">
+            <input type="text" id="burger_name" name="burger_name" placeholder="Name of your burger">
+          </div>
+          <button class="btn btn-default btn-outline-dark add" type="submit">Add Burger</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 text-center">
+    <h2>Freshly Made Burgers!</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      <p class="burg-name">{{burger_name}}</p>
+      <form action="/{{id}}?_method=PUT" method="POST">
+        <input type="hidden" name="devoured" value="true">
+        <button class="btn btn-default btn-outline-dark dev" type="submit">Devour!</button>
+      </form>
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-4 text-center">
+    <h2>Eaten Burgers!</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      <p class="burg-name">{{burger_name}}</p>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
