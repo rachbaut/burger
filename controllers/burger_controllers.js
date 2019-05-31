@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
     var burgObj = {
       burgers: data
     };
-    res.redirect('/todo', burgObj);
+    res.render('index', burgObj);
   });
 });
 
