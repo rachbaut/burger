@@ -9,8 +9,8 @@ if(process.env.JAWSDB_URL){
     host     : 'localhost',
     user     : 'root',
     password : '',
-    database : 'burgers_db'
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    database : 'burgers_db',
+    socketPath : '/Applications/MAMP/tmp/mysql/mysql.sock'
   });
 }
 
